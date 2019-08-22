@@ -1,8 +1,11 @@
 #include "shell.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <sys/types.h>
 
+/**
+  * _strlen - Calls function
+  * @s: ...
+  * Description: Functions that calculates length of string
+  * Return: length of string
+  */
 int _strlen(char *s)
 {
 	unsigned int length;
@@ -13,8 +16,12 @@ int _strlen(char *s)
 	return (length);
 }
 
-
-
+/**
+  * word_count - Calls function
+  * @str: ...
+  * Description: ...
+  * Return:
+  */
 int word_count(char *str)
 {
 	int i, count = 0;
@@ -26,7 +33,12 @@ int word_count(char *str)
 	return (count);
 }
 
-
+/**
+  * **split_string - Calls function
+  * @str: ...
+  * Description:
+  * Return:
+  */
 char **split_string(char *str)
 {
 	int i, w_count;
@@ -53,6 +65,13 @@ char **split_string(char *str)
 	return (words);
 }
 
+/**
+  * _strcmp - Calls function
+  * @s1: ...
+  * @s2: ...
+  * Description:
+  * Return:
+  */
 int _strcmp(char *s1, char *s2)
 {
 	int a;
@@ -62,6 +81,13 @@ int _strcmp(char *s1, char *s2)
 	return (s1[a] - s2[a]);
 }
 
+/**
+  * *str_concat - Calls function
+  * @s1: ...
+  * @s2: ...
+  * Description:
+  * Return:
+  */
 char *str_concat(char *s1, char *s2)
 {
 	char *str;
@@ -71,7 +97,7 @@ char *str_concat(char *s1, char *s2)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	
+
 	str = (char *)malloc(sizeof(char) * (_strlen(s1) + _strlen(s2) + 1));
 	if (str == NULL)
 		return (NULL);
@@ -86,5 +112,3 @@ char *str_concat(char *s1, char *s2)
 	}
 	return (str);
 }
-
-

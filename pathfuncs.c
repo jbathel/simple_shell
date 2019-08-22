@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+  * _strlen - Calls function
+  * @s: ...
+  * Description: ...
+  * Return: ...
+  */
 unsigned int _strlen(char *s)
 {
 	unsigned int length;
@@ -11,6 +17,15 @@ unsigned int _strlen(char *s)
 	return (length);
 }
 
+/**
+  * printenv - Calls function
+  * @args: ...
+  * @env: ...
+  * @path_list: ...
+  * @hist_list: ...
+  * Description: ...
+  * Return: ...
+  */
 int printenv(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
 {
 	int i = 0;
@@ -29,6 +44,15 @@ int printenv(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
 	return (0);
 }
 
+/**
+  * search_path - Calls function
+  * @head: ...
+  * @c: ...
+  * @av: ...
+  * @to_string: ...
+  * Description:
+  * Return: ...
+  */
 char *search_path(list_t *head, char *c, char **av, char *to_string)
 {
 	list_t node;
@@ -51,6 +75,13 @@ char *search_path(list_t *head, char *c, char **av, char *to_string)
 	return (NULL);
 }
 
+/**
+  * *_strstr -  Calls function
+  * @haystack: ...
+  * @needle: ...
+  * Description: ...
+  * Return: ...
+  */
 char *_strstr(char *haystack, char *needle)
 {
 	while (*haystack != '\0')
@@ -70,6 +101,13 @@ char *_strstr(char *haystack, char *needle)
 	return (0);
 }
 
+/**
+  * char_check - Calls function
+  * @s: ...
+  * @in: ...
+  * Description: ...
+  * Return: ...
+  */
 int char_check(char *s, const char *in)
 {
 	int i;
@@ -81,14 +119,14 @@ int char_check(char *s, const char *in)
 		return (1);
 
 	return (0);
-
 }
 
 /**
-* _getenv - gets an environmental variable
-* @name: name to search for
-* Return: value of variable
-*/
+  * _getenv - Calls function
+  * @name: name to search for
+  * Description: Function that gets an environmental variable
+  * Return: value of variable
+  */
 char *_getenv(const char *name, char **env)
 {
 	int i;
@@ -109,6 +147,13 @@ char *_getenv(const char *name, char **env)
 	return (NULL);
 }
 
+/**
+  * *add_node_end - Calls function
+  * @head: ...
+  * @str: ...
+  * Description: ...
+  * Return: ...
+  */
 list_t *add_node_end(list_t **head, char *str)
 {
 	list_t *new, *i;
@@ -130,6 +175,13 @@ list_t *add_node_end(list_t **head, char *str)
 	return (new);
 }
 
+/**
+  * build_linked_list - Calls function
+  * @path: ...
+  * head: ...
+  * Description: ...
+  * Return: ...
+  */
 void build_linked_list(char *path, list_t **head)
 {
 	char *builder;
@@ -142,6 +194,12 @@ void build_linked_list(char *path, list_t **head)
 	}
 }
 
+/**
+  * free_list - Calls function
+  * @head: ...
+  * Description: ...
+  * Return: ...
+  */
 void free_list(list_t *head)
 {
 	if (head == NULL)
@@ -149,5 +207,3 @@ void free_list(list_t *head)
 	free_list(head->str);
 	free(head);
 }
-
-
