@@ -1,6 +1,11 @@
 #include "shell.h"
-
-int string_to_i(char *s)
+/**
+  * string_to_i - calls functions
+  * @s:
+  * Description: Function that ...
+  * Return: ...
+  */
+int string_to_int(char *s)
 {
 	int value = 0;
 	int i = 0;
@@ -9,7 +14,13 @@ int string_to_i(char *s)
 		value = value * 10 + s[i] - '0';
 	return (value)
 }
-
+/**
+  * *counter_to_string - calls functions
+  * @i:
+  * @to_string:
+  * Description: Function that ...
+  * Return: ...
+  */
 char *counter_to_string(int i, char *to_string)
 {
 	int var;
@@ -28,4 +39,3 @@ char *counter_to_string(int i, char *to_string)
 	to_string[j] = '\0';
 	return (to_string);
 }
-

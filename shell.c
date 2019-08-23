@@ -1,7 +1,5 @@
 #include "shell.h"
 
-#include <signal.h>
-
 void signal_control(int out)
 {
 	(void) out;
@@ -11,8 +9,6 @@ void signal_control(int out)
 	write(STDOUT_FILENO, "$ ", 2);
 	fflush(stdout);
 }
-
-
 
 int main(int ac, char **av)
 {
