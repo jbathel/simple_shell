@@ -17,11 +17,11 @@ int string_to_int(char *s)
 /**
   * *counter_to_string - calls functions
   * @i:
-  * @to_string:
+  * @to_str:
   * Description: Function that ...
   * Return: ...
   */
-char *counter_to_string(int i, char *to_string)
+char *counter_to_string(int i, char *to_str)
 {
 	int var;
 	int j = 0;
@@ -31,11 +31,11 @@ char *counter_to_string(int i, char *to_string)
 	var /= 10;
 	while (var > 0)
 	{
-		to_string[j] = (i / var + '0');
+		to_str[j] = (i / var + '0');
 		i %= var;
 		j++;
 		var /= 10;
 	}
-	to_string[j] = '\0';
-	return (to_string);
+	to_str[j] = '\0';
+	return (to_str);
 }

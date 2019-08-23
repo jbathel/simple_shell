@@ -53,13 +53,13 @@ int printenv(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
   * Description:
   * Return: ...
   */
-char *search_path(list_t *head, char *c, char **av, char *to_string)
+char *search_path(list_t *head, char *c, char **av, char *to_str)
 {
 	list_t *node;
 	char *full_command;
 	char *command = str_concat("/", c);
 	(void) av;
-	(void) to_string;
+	(void) to_str;
 
 	for (node = head; node != NULL; node = node->next)
 	{
@@ -186,13 +186,13 @@ list_t *add_node_end(list_t **head, char *str)
   */
 void build_linked_list(char *path, list_t **head)
 {
-	char *builder;
+	char *token;
 
-	builder = strtok(path, ":");
-	while (builder)
+	token = strtok(path, ":");
+	while (token)
 	{
-		add_node_end(head, builder);
-		builder = strtok(NULL, ":");
+		add_node_end(head, token);
+		token = strtok(NULL, ":");
 	}
 }
 

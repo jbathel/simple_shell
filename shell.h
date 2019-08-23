@@ -48,18 +48,18 @@ typedef struct builtin_sh
 
 void free_list(list_t *head);
 void build_linked_list(char *path, list_t **head);
-void exit_toobig(char **av, char **argv, char *to_string);
-void err_handler(char **av, char **argv, char *to_string);
+void exit_toobig(char **av, char **argv, char *to_str);
+void err_handler(char **av, char **argv, char *to_str);
 
 int word_counter(char *str);
 
 /* Functions in conversions.c file */
 int string_to_int(char *s);
-char *counter_to_string(int i, char *to_string);
+char *counter_to_string(int i, char *to_str);
 
 /* Functions in pathfuncs.c file */
 int printenv(char **args, char ***env, node_t **path_list, node_t **hist_list);
-char *search_path(list_t *head, char *c, char **av, char *to_string);
+char *search_path(list_t *head, char *c, char **av, char *to_str);
 char *_strstr(char *haystack, char *needle);
 int char_check(char *s, const char *in);
 char *_getenv(const char *name, char **env);
@@ -75,8 +75,8 @@ int _strcmp(char *s1, char *s2);
 char *str_concat(char *s1, char *s2);
 
 /* Functions that need to be put in separete files */
-void exit_help(char **av, char **argv, char *to_string);
-void error_help(char **av, char **argv, char *to_string);
+void exit_toobig(char **av, char **argv, char *to_str);
+void err_handler(char **av, char **argv, char *to_str);
 extern char **environ; /* Duplicate */
 int _setenv(const char *name, const char *value, int overwrite);
 int _unsetenv(const char *name);
