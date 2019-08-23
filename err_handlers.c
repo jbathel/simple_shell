@@ -19,4 +19,3 @@ void exit_toobig(char **av, char **argv, char *to_str)
 	write(2, argv[1], _strlen(argv[1]));
 	write(2, "\n", 1);
 }
-

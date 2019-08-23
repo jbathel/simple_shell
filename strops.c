@@ -17,12 +17,12 @@ int _strlen(char *s)
 }
 
 /**
-  * word_count - Calls function
+  * word_counter - Calls function
   * @str: ...
   * Description: ...
   * Return:
   */
-int word_count(char *str)
+int word_counter(char *str)
 {
 	int i, count = 0;
 	for (i = 0; str[i] != '\0'; i++)
@@ -45,7 +45,7 @@ char **split_string(char *str)
 	char *token;
 	char **words;
 
-	w_count = word_count(str);
+	w_count = word_counter(str);
 
 	if (!w_count)
 		return (NULL);
