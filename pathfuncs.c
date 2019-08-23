@@ -37,7 +37,7 @@ int printenv(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
 		return (-1);
 	while (environ[i])
 	{
-		write(STDOUT_FILENO,environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
 		write(STDOUT_FILENO, "\n", 1);
 		++i;
 	}
@@ -65,7 +65,7 @@ char *search_path(list_t *head, char *c, char **av, char *to_string)
 	{
 		full_command = str_concat(node->str, command);
 
-		if (access(full_command, X_OK) == 0);
+		if (access(full_command, X_OK) == 0)
 		{
 			return (full_command);
 		}
@@ -169,8 +169,9 @@ list_t *add_node_end(list_t **head, char *str)
 		*head = new;
 	}
 	else
-	{												for (i = *head; i->next != NULL; i = i->next)							;
-		i->next = new;
+	{
+		for (i = *head; i->next != NULL; i = i->next)
+			i->next = new;
 	}
 	return (new);
 }
