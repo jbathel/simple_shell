@@ -1,4 +1,4 @@
-fndef _SHELL_H_
+#ifndef _SHELL_H_
 #define _SHELL_H_
 
 #include <unistd.h>
@@ -46,8 +46,8 @@ typedef struct builtin_sh
 
 void free_list(list_t *head);
 void build_linked_list(char *path, list_t **head);
-void exit_help(char **av, char **argv, char *to_string);
-void error_help(char **av, char **argv, char *to_string);
+void exit_toobig(char **av, char **argv, char *to_string);
+void err_handler(char **av, char **argv, char *to_string);
 
 int word_counter(char *str);
 int string_to_int(char *s);
