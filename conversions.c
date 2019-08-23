@@ -12,7 +12,7 @@ int string_to_int(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 		value = value * 10 + s[i] - '0';
-	return (value)
+	return (value);
 }
 /**
   * *counter_to_string - calls functions

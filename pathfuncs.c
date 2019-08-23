@@ -6,9 +6,9 @@
   * Description: ...
   * Return: ...
   */
-unsigned int _strlen(char *s)
+int _strlen(char *s)
 {
-	unsigned int length;
+	int length;
 
 	length = 0;
 
@@ -55,7 +55,7 @@ int printenv(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
   */
 char *search_path(list_t *head, char *c, char **av, char *to_string)
 {
-	list_t node;
+	list_t *node;
 	char *full_command;
 	char *command = str_concat("/", c);
 	(void) av;
@@ -171,7 +171,8 @@ list_t *add_node_end(list_t **head, char *str)
 	else
 	{
 		for (i = *head; i->next != NULL; i = i->next)
-			i->next = new;
+			;
+		i->next = new;
 	}
 	return (new);
 }
@@ -203,8 +204,13 @@ void build_linked_list(char *path, list_t **head)
   */
 void free_list(list_t *head)
 {
-	if (head == NULL)
-		return;
-	free_list(head->str);
-	free(head);
+	list_t *temp;
+	
+	while (head != NULL)
+	{
+		temp = head;
+		free(temp->str);
+		head = head->next;
+		free(temp);
+	}
 }

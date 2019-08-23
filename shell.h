@@ -58,7 +58,6 @@ int string_to_int(char *s);
 char *counter_to_string(int i, char *to_string);
 
 /* Functions in pathfuncs.c file */
-unsigned int _strlen(char *s); /* Do we need both? */
 int printenv(char **args, char ***env, node_t **path_list, node_t **hist_list);
 char *search_path(list_t *head, char *c, char **av, char *to_string);
 char *_strstr(char *haystack, char *needle);
