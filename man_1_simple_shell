@@ -1,11 +1,22 @@
-.TH man 2 "15 August 2019" "0.32" "holberton man page"
+.TH man 2 "24 August 2019" "0.32" "One Hell of a Shell - Holberton Project"
 .SH NAME
-.B holberton
-- become a full-stack software engineer.
+.B Simple Shell
+- The shell of what used to be two healthy Holberton Students...and a simple UNIX command interpreter
 .SH SYNOPSIS
-holberton [STUDENTNAME]
+hsh [options][command argument]
 .SH DESCRIPTION
-Holberton School is a project-based alternative to college for the next generation of software engineers.
+A Unix Command line interpreter that displays a prompt and waits for the user to type a command, to which it again displays the prompt after executing the command. 
+
+If an executable can't be found, it prints an error message and displays the prompt again, thus it also handles errors. 
+
+The shell handles simple command lines made of only one word - excluding semicolons, pipes, redirections, or other advanced features. 
+
+The program is compiled this way: 
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
+It is then accessed by typing: ./hsh
+
+It produces the same output as sh(/bin/sh)
 .SH OPTIONS
 .B holberton
 does not take any options. However, you can supply studentname.
@@ -14,4 +25,4 @@ does not take any options. However, you can supply studentname.
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Jessica Bathel, Yasher Mateen
+Jessica Bathel, Yashar Mateen
