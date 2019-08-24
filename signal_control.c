@@ -6,6 +6,9 @@
   * Description: ...
   * Return: 0
   */
+/*
+ *
+ *
 void signal_control(int out)
 {
 	(void) out;
@@ -15,3 +18,4 @@ void signal_control(int out)
 	write(STDOUT_FILENO, "$ ", 2);
 	fflush(stdout);
 }
+*/
