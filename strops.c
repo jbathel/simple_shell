@@ -49,6 +49,11 @@ char **split_string(char *str)
 	if (!w_count)
 		return (NULL);
 
+	words = malloc(sizeof(char *) * (w_count + 1));
+
+	if (!words)
+			return (NULL);
+
 	token = strtok(str, " ");
 
 	i = 0;
@@ -120,7 +125,7 @@ char *str_concat(char *s1, char *s2)
  */
 char *_strdup(char *str)
 {
-	int strlen;
+	int strlen = 0;
 	int n, i = 0;
 	char *dest;
 

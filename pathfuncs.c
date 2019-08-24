@@ -8,7 +8,7 @@
   * @hist_list: ...
   * Description: ...
   * Return: ...
-  */
+
 int print_env(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
 {
 	int i = 0;
@@ -26,6 +26,25 @@ int print_env(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
 	}
 	return (0);
 }
+*/
+
+/*
+ * Alternative print_env function if the above doesn't work
+ * print_env - prints the current environment
+ * Return: void
+ */
+void print_env(void)
+{
+	int i = 0;
+
+	while (environ[i])
+	{
+		write(STDIN_FILENO, environ[i], _strlen(environ[i]));
+		write(STDIN_FILENO, "\n", 1);
+		i++;
+	}
+}
+
 
 /**
   * search_path - Calls function
@@ -110,24 +129,20 @@ int char_check(char *s, const char *in)
   * Description: Function that gets an environmental variable
   * Return: value of variable
   */
-char *_getenv(const char *name, char **env)
+char *_getenv(const char *name)
 {
 	int i;
-	char **environ;
+	char *token = NULL;
 
-	environ = env;
-
-	if (!environ || !name)
-		return (NULL);
-
-	i = 0;
-	while (environ[i] != 0)
+	for (i = 0; environ[i]; i++)
 	{
-		if (char_check(environ[i], name))
-			return (environ[i] + _strlen(name) + 1);
-		++i;
+		if (_strstr(environ[i], (char *)name))
+		{
+			token = strtok(environ[i], "=");
+			token = strtok(NULL, "=");
+		}
 	}
-	return (NULL);
+	return (token);
 }
 
 /**

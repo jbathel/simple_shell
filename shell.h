@@ -56,11 +56,11 @@ char *counter_to_string(int i, char *to_str);
 
 /* Functions in pathfuncs.c file */
 /* Need to divide into different files - only 5 functions per file */
-int print_env(char **args, char ***env, node_t **path_list, node_t **hist_list);
+int print_env(void);
 char *search_path(list_t *head, char *c, char **av, char *to_str);
 char *_strstr(char *haystack, char *needle);
 int char_check(char *s, const char *in);
-char *_getenv(const char *name, char **env);
+char *_getenv(const char *name);
 list_t *add_node_end(list_t **head, char *str);
 void build_linked_list(char *path, list_t **head);
 void free_list(list_t *head);
