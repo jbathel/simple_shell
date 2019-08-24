@@ -77,11 +77,11 @@ TBD
 * **Jessica Bathel** - [jbathel](https://github.com/jbathel)
 * **Yashar Mateen** - [yasheymateen](https://github.com/yasheymateen)
  
-## Licence
+## License
 
 MIT License
 
-Copyright (c) [2019] [Jessica Bathel, Yashar Mateen]
+Copyright (c) [2019]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
