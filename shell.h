@@ -56,7 +56,7 @@ char *counter_to_string(int i, char *to_str);
 
 /* Functions in pathfuncs.c file */
 /* Need to divide into different files - only 5 functions per file */
-int print_env(void);
+void print_env(void);
 char *search_path(list_t *head, char *c, char **av, char *to_str);
 char *_strstr(char *haystack, char *needle);
 int char_check(char *s, const char *in);
