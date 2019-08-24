@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -55,8 +56,7 @@ char *counter_to_string(int i, char *to_str);
 
 /* Functions in pathfuncs.c file */
 /* Need to divide into different files - only 5 functions per file */
-int _strlen(char *s);
-int printenv(char **args, char ***env, node_t **path_list, node_t **hist_list);
+int print_env(char **args, char ***env, node_t **path_list, node_t **hist_list);
 char *search_path(list_t *head, char *c, char **av, char *to_str);
 char *_strstr(char *haystack, char *needle);
 int char_check(char *s, const char *in);
@@ -66,11 +66,12 @@ void build_linked_list(char *path, list_t **head);
 void free_list(list_t *head);
 
 /* Functions in strops.c file */
-unsigned int _strlen(char *s); /* Do we need both int and unsigned int - if so how does the program know which _strlen to call when - do we need to remove one or rename one? */
+int _strlen(const char *s);
 int word_counter(char *str);
 char **split_string(char *str);
 int _strcmp(char *s1, char *s2);
 char *str_concat(char *s1, char *s2);
+char *_strdup(char *str);
 
 /* Called in pathfuncs.c */
 extern char **environ;
@@ -80,8 +81,5 @@ int _setenv(const char *name, const char *value, int overwrite);
 int _unsetenv(const char *name);
 char *_memcpy(char *dest, const char *src, unsigned int n);
 int _strncmp(char *s1, char *s2, size_t bytes);
-
-/* Called in pathfuncs.c but full function does not exist anywhere */
-char *_strdup(char *str);
 
 #endif /* SHELL_H */

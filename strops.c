@@ -1,27 +1,26 @@
 #include "shell.h"
 
 /**
-  * _strlen - Calls function
-  * @s: ...
-  * Description: Functions that calculates length of string
-  * Return: length of string
-  */
-int _strlen(char *s)
+ * _strlen - Calls function
+ * @s: ...
+ * Description: Functions that calculates length of string
+ * Return: length of string
+ */
+int _strlen(const char *s)
 {
-	unsigned int length;
+	int a;
 
-	length = 0;
-	for (length = 0; s[length]; length++)
-		;
-	return (length);
+	for (a = 0; *s != '\0'; s++)
+		a++;
+	return (a);
 }
 
 /**
-  * word_counter - Calls function
-  * @str: ...
-  * Description: ...
-  * Return:
-  */
+ * word_counter - Calls function
+ * @str: ...
+ * Description: ...
+ * Return:
+ */
 int word_counter(char *str)
 {
 	int i, count = 0;
@@ -34,11 +33,11 @@ int word_counter(char *str)
 }
 
 /**
-  * **split_string - Calls function
-  * @str: ...
-  * Description:
-  * Return:
-  */
+ * **split_string - Calls function
+ * @str: ...
+ * Description:
+ * Return:
+ */
 char **split_string(char *str)
 {
 	int i, w_count;
@@ -66,12 +65,12 @@ char **split_string(char *str)
 }
 
 /**
-  * _strcmp - Calls function
-  * @s1: ...
-  * @s2: ...
-  * Description:
-  * Return:
-  */
+ * _strcmp - Calls function
+ * @s1: ...
+ * @s2: ...
+ * Description:
+ * Return:
+ */
 int _strcmp(char *s1, char *s2)
 {
 	int a;
@@ -82,12 +81,12 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
-  * *str_concat - Calls function
-  * @s1: ...
-  * @s2: ...
-  * Description:
-  * Return:
-  */
+ * *str_concat - Calls function
+ * @s1: ...
+ * @s2: ...
+ * Description:
+ * Return:
+ */
 char *str_concat(char *s1, char *s2)
 {
 	char *str;
@@ -111,4 +110,36 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 	return (str);
+}
+/**
+ * *_strdup - Function that returns a pointer to a newly allocated
+ * space in memory, which contains a copy of the string given as a parameter.
+ * @str: Array passed by main
+ *
+ * Return: Array
+ */
+char *_strdup(char *str)
+{
+	int strlen;
+	int n, i = 0;
+	char *dest;
+
+	if (str == NULL)
+		return (NULL);
+
+	while (str[i] != '\0')
+	{
+		strlen++;
+		i++;
+	}
+	dest = malloc(sizeof(char) * (strlen + 1));
+
+	if (dest == NULL)
+		return (NULL);
+
+	for (n = 0; str[n] != '\0'; n++)
+	{
+		dest[n] = str[n];
+	}
+	return (dest);
 }

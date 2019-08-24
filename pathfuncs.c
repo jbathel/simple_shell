@@ -1,24 +1,7 @@
 #include "shell.h"
 
 /**
-  * _strlen - Calls function
-  * @s: ...
-  * Description: ...
-  * Return: ...
-  */
-int _strlen(char *s)
-{
-	int length;
-
-	length = 0;
-
-	for (length = 0; s[length]; length++)
-		;
-	return (length);
-}
-
-/**
-  * printenv - Calls function
+  * print_env - Calls function
   * @args: ...
   * @env: ...
   * @path_list: ...
@@ -26,7 +9,7 @@ int _strlen(char *s)
   * Description: ...
   * Return: ...
   */
-int printenv(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
+int print_env(char **args, char ***env, node_t **path_1ist, node_t **hist_1ist)
 {
 	int i = 0;
 	char **environ;
