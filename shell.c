@@ -1,22 +1,8 @@
 #include "shell.h"
 
-void signal_control(int out)
-{
-	(void) out;
-
-	signal(SIGINT, signal_control);
-	write(1, "\n", 1);
-	write(STDOUT_FILENO, "$ ", 2);
-	fflush(stdout);
-}
-
 int main(int ac, char **av)
 {
 	int status, i, is_on;
-/*	char *line = NULL;*/
-/*	size_t size = 0; */
-/*	size_t index = 0;*/
-/*	char *argv = NULL; */
 	char *buf = NULL;
 	char *path = _getenv("PATH");
 	int counter = 1;

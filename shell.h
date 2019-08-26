@@ -44,7 +44,8 @@ typedef struct builtin_sh
 	int (*fp)(char **args, char **env, node_t **path_list, node_t **hist_list);
 } builtin_t;
 
-
+/* Signal Control */
+void signal_control(int out);
 
 /* Functions in err_handlers.c */
 void exit_toobig(char **av, char **argv, char *to_str);
@@ -66,6 +67,7 @@ void build_linked_list(char *path, list_t **head);
 void free_list(list_t *head);
 
 /* Functions in strops.c file */
+/* Need to divide into different files - only 5 functions per file */
 int _strlen(const char *s);
 int word_counter(char *str);
 char **split_string(char *str);
