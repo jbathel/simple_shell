@@ -9,9 +9,13 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
-/* #include <signal.h> */
 
-/* */
+/**
+  * typedef struct node_s - ...
+  * *name: ...
+  * *val: ...
+  * *next: ...
+  */
 typedef struct node_s
 {
 	char *name;
@@ -19,14 +23,24 @@ typedef struct node_s
 	struct node_s *next;
 } node_t;
 
-/* */
+/**
+  * typedef struct list_s - ...
+  * *str: ...
+  * *next: ...
+  */
 typedef struct list_s
 {
 	char *str;
 	struct list_s *next;
 } list_t;
 
-/* */
+/**
+  * typedef struct shell_s - ...
+  * *path_list: ...
+  * *hist_list: ...
+  * **args: ...
+  * *rest: ...
+  */
 typedef struct shell_s
 {
 	char **environ;
@@ -36,7 +50,11 @@ typedef struct shell_s
 	char *rest;
 } shell_t;
 
-/* */
+/**
+  * typedef struct builtin_sh - ...
+  * *name: ...
+  * *extra: ...
+  */
 typedef struct builtin_sh
 {
 	char *name;
@@ -71,7 +89,6 @@ void free_list(list_t *head);
 list_t *add_node_end(list_t **head, char *str);
 
 /* Functions in strops.c file */
-/* Need to divide into different files - only 5 functions per file */
 int _strlen(const char *s);
 char **split_string(char *str);
 int _strcmp(char *s1, char *s2);
