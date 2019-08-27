@@ -31,11 +31,9 @@ int main(int ac, char **av)
 			break;
 		}
 		i = _strlen(buf);
-
 		if (i > 1)
 			buf[i - 1] = '\0';
 		argv = split_string(buf);
-
 		if (!argv)
 		{
 			counter++;
@@ -50,7 +48,6 @@ int main(int ac, char **av)
 		if (child_pid == 0)
 		{
 			execve(argv[0], argv, NULL);
-
 			if (_strcmp(argv[0], "exit") == 0)
 			{
 				free(argv);
@@ -84,7 +81,6 @@ int main(int ac, char **av)
 			wait(&status);
 			if (WIFEXITED(status))
 				exit_stat = WEXITSTATUS(status);
-
 			if (_strcmp(argv[0], "exit") == 0)
 			{
 				is_on = 0;
