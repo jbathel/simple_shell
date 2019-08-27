@@ -5,13 +5,13 @@
 .SH SYNOPSIS
 hsh [options][command argument]
 .SH DESCRIPTION
-A Unix Command line interpreter that displays a prompt and waits for the user to type a command, to which it again displays the prompt after executing the command. 
+A Unix Command line interpreter that displays a prompt and waits for the user to type a command, to which it again displays the prompt after executing the command.
 
-If an executable can't be found, it prints an error message and displays the prompt again, thus it also handles errors. 
+If an executable can't be found, it prints an error message and displays the prompt again, thus it also handles errors.
 
-The shell handles simple command lines made of only one word - excluding semicolons, pipes, redirections, or other advanced features. 
+The shell handles simple command lines made of only one word - excluding semicolons, pipes, redirections, or other advanced features.
 
-The program is compiled this way: 
+The program is compiled this way:
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 It is then accessed by typing: ./hsh

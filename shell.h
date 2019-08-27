@@ -47,6 +47,9 @@ typedef struct builtin_sh
 /* Signal Control */
 void signal_control(int out);
 
+/* Functions in helpers.c */
+int word_counter(char *str);
+
 /* Functions in err_handlers.c */
 void exit_toobig(char **av, char **argv, char *to_str);
 void err_handler(char **av, char **argv, char *to_str);
@@ -56,20 +59,20 @@ int string_to_int(char *s);
 char *counter_to_string(int i, char *to_str);
 
 /* Functions in pathfuncs.c file */
-/* Need to divide into different files - only 5 functions per file */
 void print_env(void);
 char *search_path(list_t *head, char *c, char **av, char *to_str);
 char *_strstr(char *haystack, char *needle);
 int char_check(char *s, const char *in);
 char *_getenv(const char *name);
-list_t *add_node_end(list_t **head, char *str);
+
+/* Functions in lists.c */
 void build_linked_list(char *path, list_t **head);
 void free_list(list_t *head);
+list_t *add_node_end(list_t **head, char *str);
 
 /* Functions in strops.c file */
 /* Need to divide into different files - only 5 functions per file */
 int _strlen(const char *s);
-int word_counter(char *str);
 char **split_string(char *str);
 int _strcmp(char *s1, char *s2);
 char *str_concat(char *s1, char *s2);

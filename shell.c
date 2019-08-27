@@ -24,7 +24,6 @@ int main(int ac, char **av)
 		signal(SIGINT, signal_control);
 		if (isatty(0) == 1)
 			write(STDOUT_FILENO, "$ ", 2);
-
 		if (getline(&buf, &buf_size, stdin) == EOF)
 		{
 			if (isatty(0) == 1)
@@ -34,9 +33,7 @@ int main(int ac, char **av)
 		i = _strlen(buf);
 
 		if (i > 1)
-		{
-			buf[i -1] = '\0';
-		}
+			buf[i - 1] = '\0';
 		argv = split_string(buf);
 
 		if (!argv)
@@ -44,7 +41,6 @@ int main(int ac, char **av)
 			counter++;
 			continue;
 		}
-
 		child_pid = fork();
 		if (child_pid == -1)
 		{
@@ -82,16 +78,14 @@ int main(int ac, char **av)
 				free(argv);
 			}
 			exit(exit_stat);
-
 		}
-
 		else
 		{
 			wait(&status);
 			if (WIFEXITED(status))
 				exit_stat = WEXITSTATUS(status);
 
-			if(_strcmp(argv[0], "exit") == 0)
+			if (_strcmp(argv[0], "exit") == 0)
 			{
 				is_on = 0;
 				if (argv[1])
@@ -117,6 +111,5 @@ int main(int ac, char **av)
 	free_list(head);
 	free(buf);
 	free(to_str);
-
 	return (exit_stat);
 }

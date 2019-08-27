@@ -1,4 +1,4 @@
-# Simple Shell - A Hell of a Shell (In a Shell...) 
+# Simple Shell - A Hell of a Shell (In a Shell...)
  - Jessica Bathel and Yashar Mateen
 
 ### simple_shell:
@@ -41,42 +41,42 @@ invoking `./hsh` and also in non-interactive mode by invoking for example: `echo
 
 ## Contents
 *       AUTHORS
-*       conversions.c - 
+*       conversions.c -
 *       err_handlers.c -
 *       man_1_simple_shell - man page for our shell
-*       pathfuncs.c - 
+*       pathfuncs.c -
 *       README.md (this file)
-*       shell.c 
+*       shell.c
 			- main file that contains the code for an executable program that works
 like an interactive shell
 *       shell.h
-			- header file including all of our libraries, prototypes, and struct definitions 
+			- header file including all of our libraries, prototypes, and struct definitions
 			to be used in our shell.c file
 *       signal_control.c
- 			- 
-*       strops.c 
+ 			-
+*       strops.c
 			- contains functions that handle string operations and manipulations
 
 ## Compilation:
- The program is compiled with the following command: 
+ The program is compiled with the following command:
  `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
 
 ## Usage:
 The way to use it in interactive mode is to type the command:
  `./hsh`.
   This will display another shell prompt beginning with `($)` (TBD)
-  
+
 ## Tasks / Edge Cases:
 TBD
- 
+
 ## Exceptions:
 TBD
- 
+
 
 ## Contributors
 * **Jessica Bathel** - [jbathel](https://github.com/jbathel)
 * **Yashar Mateen** - [yasheymateen](https://github.com/yasheymateen)
- 
+
 ## License
 
 MIT License
