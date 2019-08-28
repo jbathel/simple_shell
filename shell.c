@@ -2,10 +2,10 @@
 
 int main(__attribute__((unused))int ac, char **av)
 {
-	int status, is_on = 1, exit_stat = 0;
+	int status, counter = 1, is_on = 1, exit_stat = 0, i;
 	size_t too_big = 0, buf_size = 0;
-	char *to_str, *full_command = NULL;
-	char *path = _getenv("PATH");
+	char *to_str, *full_command = NULL, *buf;
+	char **argv = NULL, *path = _getenv("PATH");
 	pid_t child_pid;
 	list_t *head = NULL;
 
@@ -16,8 +16,7 @@ int main(__attribute__((unused))int ac, char **av)
 	while (is_on)
 	{
 		command_prompt();
-		read_command(char **);
-	/*		if (getline(&buf, &buf_size, stdin) == EOF)
+			if (getline(&buf, &buf_size, stdin) == EOF)
 		{
 			if (isatty(0) == 1)
 				write(STDOUT_FILENO, "\n", 1);
@@ -37,7 +36,7 @@ int main(__attribute__((unused))int ac, char **av)
 		{
 			perror("Error:");
 			exit(1);
-		}*/
+		}
 		if (child_pid == 0)
 		{
 			execve(argv[0], argv, NULL);
@@ -98,7 +97,7 @@ int main(__attribute__((unused))int ac, char **av)
 		free(argv);
 	}
 	free_list(head);
-	free(buf);
+/*	free(buf);*/
 	free(to_str);
 	return (exit_stat);
 }

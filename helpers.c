@@ -35,8 +35,8 @@ void command_prompt()
  * @
  * Description: Function that parses and interprets user input
  * Return: 0
- */
-void read_command(char argv[], char **argv)
+
+void read_command()
 {
 	int i, counter = 1;
 	char *buf;
@@ -59,3 +59,4 @@ void read_command(char argv[], char **argv)
 		continue;
 	}
 }
+*/
