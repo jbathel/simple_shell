@@ -15,6 +15,8 @@
   * *name: ...
   * *val: ...
   * *next: ...
+  *
+  * Description:
   */
 typedef struct node_s
 {
@@ -27,6 +29,8 @@ typedef struct node_s
   * typedef struct list_s - ...
   * *str: ...
   * *next: ...
+  *
+  * Description: ...
   */
 typedef struct list_s
 {
@@ -40,6 +44,8 @@ typedef struct list_s
   * *hist_list: ...
   * **args: ...
   * *rest: ...
+  *
+  * Description: Structure used to build PATH
   */
 typedef struct shell_s
 {
@@ -54,6 +60,8 @@ typedef struct shell_s
   * typedef struct builtin_sh - ...
   * *name: ...
   * *extra: ...
+  *
+  * Description:
   */
 typedef struct builtin_sh
 {
@@ -67,6 +75,7 @@ void signal_control(int out);
 
 /* Functions in helpers.c */
 int word_counter(char *str);
+void type_prompt();
 
 /* Functions in err_handlers.c */
 void exit_toobig(char **av, char **argv, char *to_str);

@@ -2,18 +2,12 @@
 
 int main(int ac, char **av)
 {
-	int status, i, is_on;
-	char *buf = NULL;
-	char *path = _getenv("PATH");
-	int counter = 1;
-	size_t too_big = 0;
-	char *to_str, *full_command = NULL;
-	char **argv = NULL;
+	int status, i, is_on = 1, exit_stat = 0, counter = 1;
+	size_t too_big = 0, buf_size = 0;
+	char *to_str, *full_command = NULL, **argv = NULL;
+	char *buf = NULL, *path = _getenv("PATH");
 	pid_t child_pid;
 	list_t *head = NULL;
-	size_t buf_size = 0;
-	int exit_stat = 0;
-
 	build_linked_list(path, &head);
 	is_on = 1;
 	to_str = malloc(sizeof(char) * 17);
@@ -21,9 +15,12 @@ int main(int ac, char **av)
 
 	while (is_on)
 	{
+		type_prompt();
+		/*
 		signal(SIGINT, signal_control);
 		if (isatty(0) == 1)
 			write(STDOUT_FILENO, "$ ", 2);
+		*/
 		if (getline(&buf, &buf_size, stdin) == EOF)
 		{
 			if (isatty(0) == 1)
