@@ -36,6 +36,7 @@ void command_prompt()
  * Description: Function that parses and interprets user input
  * Return: 0
  */
+/*
 void read_command(char argv[], char **argv)
 {
 	int i, counter = 1;
@@ -59,3 +60,29 @@ void read_command(char argv[], char **argv)
 		continue;
 	}
 }
+
+
+size_t read_command(buf_size) {
+
+	int i, counter = 1;
+	char *buf;
+	char **argv = NULL;
+	size_t buf_size;
+
+	if (getline(&buf, &buf_size, stdin) == EOF) {
+		if (isatty(0) == 1)
+			write(STDOUT_FILENO, "\n", 1);
+		break;
+	}
+	i = _strlen(buf);
+	if (i > 1)
+		buf[i - 1] = '\0';
+
+	argv = split_string(buf);
+	if (!argv) {
+		counter++;
+		continue;
+	}
+	return buf_size;
+}
+*/

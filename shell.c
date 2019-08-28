@@ -1,13 +1,28 @@
 #include "shell.h"
 
+
 int main(__attribute__((unused))int ac, char **av)
 {
-	int status, is_on = 1, exit_stat = 0;
+	/*
+	 *
+	int status, is_on = 1, exit_stat = 0, counter = 1;
 	size_t too_big = 0, buf_size = 0;
-	char *to_str, *full_command = NULL;
+	char *to_str, *full_command = NULL, **argv = NULL, *buf = NULL;
 	char *path = _getenv("PATH");
 	pid_t child_pid;
 	list_t *head = NULL;
+	*/
+	int status, i, is_on;
+	char *buf = NULL;
+	char *path = _getenv("PATH");
+	int counter = 1;
+	size_t too_big = 0;
+	char *to_str, *full_command = NULL;
+	char **argv = NULL;
+	pid_t child_pid;
+	list_t *head = NULL;
+	size_t buf_size = 0;
+	int exit_stat = 0;
 
 	build_linked_list(path, &head);
 	is_on = 1;
@@ -15,13 +30,13 @@ int main(__attribute__((unused))int ac, char **av)
 
 	while (is_on)
 	{
+		/* for signal control */
 		command_prompt();
-		read_command(char **);
-	/*		if (getline(&buf, &buf_size, stdin) == EOF)
+			if (getline(&buf, &buf_size, stdin) == EOF)
 		{
 			if (isatty(0) == 1)
 				write(STDOUT_FILENO, "\n", 1);
-			break;
+				break;
 		}
 		i = _strlen(buf);
 		if (i > 1)
@@ -32,12 +47,15 @@ int main(__attribute__((unused))int ac, char **av)
 			counter++;
 			continue;
 		}
+
+
+		/* read_command(buf_size); */
 		child_pid = fork();
 		if (child_pid == -1)
 		{
 			perror("Error:");
 			exit(1);
-		}*/
+		}
 		if (child_pid == 0)
 		{
 			execve(argv[0], argv, NULL);

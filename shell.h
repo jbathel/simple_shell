@@ -76,7 +76,8 @@ void signal_control(int out);
 /* Functions in helpers.c */
 int word_counter(char *str);
 void command_prompt();
-void read_command(char argv[], char **argv);
+/* void read_command(char argv[], char **argv);
+size_t read_command(size_t buf_size); */
 
 /* Functions in err_handlers.c */
 void exit_toobig(char **av, char **argv, char *to_str);
