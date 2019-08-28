@@ -24,6 +24,15 @@ int main(__attribute__((unused))int ac, char **av)
 	size_t buf_size = 0;
 	int exit_stat = 0;
 
+	/* int status, counter = 1, is_on = 1, exit_stat = 0, i;
+	*size_t too_big = 0, buf_size = 0;
+	*char *to_str, *full_command = NULL, *buf;
+	*char **argv = NULL, *path = _getenv("PATH");
+*	pid_t child_pid;
+	*list_t *head = NULL;
+	*size_t buf_size = 0;
+	*int exit_stat = 0;
+*/
 	build_linked_list(path, &head);
 	is_on = 1;
 	to_str = malloc(sizeof(char) * 17);
