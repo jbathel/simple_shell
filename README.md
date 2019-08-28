@@ -42,21 +42,11 @@ invoking `./hsh` and also in non-interactive mode by invoking for example: `echo
 
 ## Contents
 * AUTHORS
-* conversions.c -
-* err_handlers.c -
-* man_1_simple_shell - man page for our shell
-* pathfuncs.c -
 * README.md (this file)
-* shell.c
-			- main file that contains the code for an executable program that works
-like an interactive shell
-*       shell.h
-			- header file including all of our libraries, prototypes, and struct definitions
-			to be used in our shell.c file
-*       signal_control.c
- 			-
-*       strops.c
-			- contains functions that handle string operations and manipulations
+* man_1_simple_shell - man page for our shell
+* shell.c - the main file that contains the code for an executable program that works like an interactive shell
+* shell.h - header file including all of our libraries, prototypes, and struct definitions to be used in our shell.c file
+* strops.c - contains functions that handle string operations and manipulations
 
 ## Compilation:
  The program is compiled with the following command:
