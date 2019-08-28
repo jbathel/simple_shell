@@ -1,4 +1,4 @@
-# Simple Shell - :fire: A Hell of a Shell (In a Shell...) :fire:
+# :fire: :shell: Simple Shell - A Hell of a Shell (In a Shell...) :shell: :fire:
  - Jessica Bathel and Yashar Mateen
 
 ### simple_shell:
