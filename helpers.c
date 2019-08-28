@@ -64,11 +64,11 @@ void read_command()
 		continue;
 	}
 }
-*/
+
 int read_command(char *buf) {
 
 	int i, counter = 1;
-	/*char *buf; */
+	char *buf;
 	char **argv = NULL;
 	size_t buf_size;
 
@@ -86,4 +86,4 @@ int read_command(char *buf) {
 	}
 	return (buf_size);
 }
-
+*/
