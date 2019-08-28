@@ -2,7 +2,7 @@
 
 /**
  * _strlen - Calls function
- * @s: ...
+ * @s: address of string input
  * Description: Functions that calculates length of string
  * Return: length of string
  */
@@ -17,9 +17,9 @@ int _strlen(const char *s)
 
 /**
  * **split_string - Calls function
- * @str: ...
- * Description:
- * Return:
+ * @str: address of string
+ * Description: ...
+ * Return: ...
  */
 char **split_string(char *str)
 {
@@ -70,9 +70,9 @@ int _strcmp(char *s1, char *s2)
 
 /**
  * *str_concat - Calls function
- * @s1: ...
- * @s2: ...
- * Description:
+ * @s1: address of first string
+ * @s2: address of second string
+ * Description: Function that concatenates two strings
  * Return:
  */
 char *str_concat(char *s1, char *s2)
