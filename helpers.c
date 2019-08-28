@@ -64,17 +64,17 @@ void read_command()
 		continue;
 	}
 }
-size_t read_command(buf_size) {
+*/
+int read_command(char *buf) {
 
 	int i, counter = 1;
-	char *buf;
+	/*char *buf; */
 	char **argv = NULL;
 	size_t buf_size;
 
 	if (getline(&buf, &buf_size, stdin) == EOF) {
 		if (isatty(0) == 1)
 			write(STDOUT_FILENO, "\n", 1);
-		break;
 	}
 	i = _strlen(buf);
 	if (i > 1)
@@ -83,8 +83,7 @@ size_t read_command(buf_size) {
 	argv = split_string(buf);
 	if (!argv) {
 		counter++;
-		continue;
 	}
-	return buf_size;
+	return (buf_size);
 }
-*/
+

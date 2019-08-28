@@ -3,15 +3,14 @@
 
 int main(__attribute__((unused))int ac, char **av)
 {
-	/*
-	 *
+
 	int status, is_on = 1, exit_stat = 0, counter = 1;
-	size_t too_big = 0, buf_size = 0;
+	size_t too_big = 0;
 	char *to_str, *full_command = NULL, **argv = NULL, *buf = NULL;
 	char *path = _getenv("PATH");
 	pid_t child_pid;
 	list_t *head = NULL;
-	*/
+	/* GO BACK TO THIS FOLLOWING DECLARATIONS IF ANYTHING FAILS
 	int status, i, is_on;
 	char *buf = NULL;
 	char *path = _getenv("PATH");
@@ -24,7 +23,7 @@ int main(__attribute__((unused))int ac, char **av)
 	size_t buf_size = 0;
 	int exit_stat = 0;
 
-	/* int status, counter = 1, is_on = 1, exit_stat = 0, i;
+	 int status, counter = 1, is_on = 1, exit_stat = 0, i;
 	*size_t too_big = 0, buf_size = 0;
 	*char *to_str, *full_command = NULL, *buf;
 	*char **argv = NULL, *path = _getenv("PATH");
@@ -41,6 +40,7 @@ int main(__attribute__((unused))int ac, char **av)
 	{
 		/* for signal control */
 		command_prompt();
+		/*
 			if (getline(&buf, &buf_size, stdin) == EOF)
 		{
 			if (isatty(0) == 1)
@@ -56,9 +56,9 @@ int main(__attribute__((unused))int ac, char **av)
 			counter++;
 			continue;
 		}
+		*/
 
-
-		/* read_command(buf_size); */
+		 read_command(buf);
 		child_pid = fork();
 		if (child_pid == -1)
 		{
