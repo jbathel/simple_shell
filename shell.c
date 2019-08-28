@@ -46,7 +46,7 @@ int main(__attribute__((unused))int ac, char **av)
 		{
 			if (isatty(0) == 1)
 				write(STDOUT_FILENO, "\n", 1);
-			/*	break;*/
+				break;
 		}
 		i = _strlen(buf);
 		if (i > 1)
