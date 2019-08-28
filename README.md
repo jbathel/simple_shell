@@ -37,7 +37,7 @@ invoking `./hsh` and also in non-interactive mode by invoking for example: `echo
 *       `waitpid` (man 2 waitpid)
 *       `wait3` (man 2 wait3)
 *       `wait4` (man 2 wait4)
-*       `write` (man 2 write)
+*       `write` `(man 2 write)`
 
 ## Contents
 *       AUTHORS
