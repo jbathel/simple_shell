@@ -65,6 +65,15 @@ This will display another shell prompt beginning with `($)`
 You will now be inside of your shell.
 
 ## Some Command Outputs
+In Interactive Mode:
+`$ ./hsh`
+`($) /bin/ls`
+hsh main.c shell.c
+`($)`
+`($) exit`
+`$`
+
+
 
 ## Exceptions:
 	Doesn't handle advanced commands and options like grep
