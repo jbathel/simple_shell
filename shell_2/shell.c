@@ -1,52 +1,31 @@
 #include "shell.h"
 
-
 int main(__attribute__((unused))int ac, char **av)
 {
-
-/*	int i, status, is_on = 1, exit_stat = 0, counter = 1;
-	size_t too_big = 0;
-	char *to_str, *full_command = NULL, **argv = NULL, *buf = NULL;
-	char *path = _getenv("PATH");
-	pid_t child_pid;
-	list_t *head = NULL;
-	size_t buf_size = 0;
-	 GO BACK TO THIS FOLLOWING DECLARATIONS IF ANYTHING FAILS */
-	int status, i, is_on;
-	char *buf = NULL;
-	char *path = _getenv("PATH");
-	int counter = 1;
-	size_t too_big = 0;
+	int i, status, is_on = 1, exit_stat = 0;;
+	size_t too_big, buf_size;;
 	char *to_str, *full_command = NULL;
-	char **argv = NULL;
+	char *path = _getenv("PATH");
 	pid_t child_pid;
 	list_t *head = NULL;
-	size_t buf_size = 0;
-	int exit_stat = 0;
-/*
-	 int status, counter = 1, is_on = 1, exit_stat = 0, i;
-	*size_t too_big = 0, buf_size = 0;
-	*char *to_str, *full_command = NULL, *buf;
-	*char **argv = NULL, *path = _getenv("PATH");
-*	pid_t child_pid;
-	*list_t *head = NULL;
-	*size_t buf_size = 0;
-	*int exit_stat = 0;
-*/
+	/* take out following if readcommand works */
+	int counter = 1;
+	char **argv = NULL, *buf = NULL;
+
+
 	build_linked_list(path, &head);
-	is_on = 1;
 	to_str = malloc(sizeof(char) * 17);
 
 	while (is_on)
 	{
-		/* for signal control */
 		command_prompt();
-
-			if (getline(&buf, &buf_size, stdin) == EOF)
+	/*	read_command(char **);*/
+		buf_size = 0;
+		if (getline(&buf, &buf_size, stdin) == EOF)
 		{
 			if (isatty(0) == 1)
 				write(STDOUT_FILENO, "\n", 1);
-				break;
+			break;
 		}
 		i = _strlen(buf);
 		if (i > 1)
@@ -57,9 +36,6 @@ int main(__attribute__((unused))int ac, char **av)
 			counter++;
 			continue;
 		}
-
-
-		/* read_command(buf);*/
 		child_pid = fork();
 		if (child_pid == -1)
 		{
@@ -72,13 +48,13 @@ int main(__attribute__((unused))int ac, char **av)
 			if (_strcmp(argv[0], "exit") == 0)
 			{
 				free(argv);
-			/*	break;*/
+				break;
 			}
 			if (_strcmp(argv[0], "env") == 0)
 			{
 				print_env();
 				free(argv);
-			/*	break;*/
+				break;
 			}
 			else if (argv[0][0] != '/')
 			{
@@ -114,7 +90,7 @@ int main(__attribute__((unused))int ac, char **av)
 						exit_toobig(&av[0], &argv[0], to_str);
 						is_on = 1;
 						exit_stat = 2;
-					/*	continue;*/
+						continue;
 					}
 					exit(string_to_int(argv[1]));
 				}
