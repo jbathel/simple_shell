@@ -60,7 +60,11 @@ The program is compiled with the following command:
 ## Usage:
 The way to use it in interactive mode is to type the command:
 `./hsh`.
-This will display another shell prompt beginning with `($)` (TBD)
+This will display another shell prompt beginning with `($)`
+
+You will now be inside of your shell.
+
+## Some Command Outputs
 
 ## Exceptions:
 	Doesn't handle advanced commands and options like grep
