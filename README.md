@@ -98,6 +98,8 @@ In Non-Interactive Mode:
 
 ## Exceptions:
 	Doesn't handle advanced commands and options like grep
+and PATH, and there are some errors with help as it only works w/ command
+ followed by --help
 
 ## Contributors
 	* **Jessica Bathel** - [jbathel](https://github.com/jbathel)
