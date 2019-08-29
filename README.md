@@ -48,27 +48,22 @@ invoking `./hsh` and also in non-interactive mode by invoking for example: `echo
 * shell.c - the main file that contains the code for an executable program that works like an interactive shell
 * shell.h - header file including all of our libraries, prototypes, and struct definitions to be used in our shell.c file
 * strops.c - contains functions that handle string operations and manipulations
-* signal_control.c -
-* pathfuncs.c -
-* list.c -
-* helpers.c -
-* err_handlers.c -
-* conversions.c -
+* signal_control.c - handles the function that returns PIDs and signal sfor parent processes and commands to execute
+* pathfuncs.c - these functions handle searching path and searching the environment
+* list.c - functions for building the linked list
+* helpers.c - miscellaneous functions that are included in the shell.c file
+* err_handlers.c - functions that handle all the errors
+* conversions.c - these functions handle all the data converter
 ## Compilation:
 The program is compiled with the following command:
-`gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
-
+`gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ## Usage:
 The way to use it in interactive mode is to type the command:
 `./hsh`.
 This will display another shell prompt beginning with `($)` (TBD)
 
-## Tasks / Edge Cases:
-	TBD
-
 ## Exceptions:
-	TBD
-
+	Doesn't handle advanced commands and options like grep
 
 ## Contributors
 	* **Jessica Bathel** - [jbathel](https://github.com/jbathel)
