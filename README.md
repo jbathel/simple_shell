@@ -86,6 +86,14 @@ In Non-Interactive Mode:
 `hsh main.c shell.c test_ls_2`
 `$`
 
+# Other Commands
+ - exit
+ - ^D
+ - ^C
+ - ls
+ - ls -l
+ - env
+
 
 ## Exceptions:
 	Doesn't handle advanced commands and options like grep
